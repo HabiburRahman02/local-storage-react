@@ -30,7 +30,13 @@ const Bottles = () => {
     }, [bottles])
 
     const handleAddToCart = bottle => {
-        setCarts([...carts, bottle]);
+        const isExist = carts.find(cart => cart.id === bottle.id);
+        if (isExist) {
+            return alert("Already added this")
+        }
+        else {
+            setCarts([...carts, bottle]);
+        }
         addToLocalStorage(bottle.id)
     }
 
