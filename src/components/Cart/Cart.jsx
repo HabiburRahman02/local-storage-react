@@ -1,9 +1,12 @@
+/* eslint-disable react/prop-types */
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, handleRemoveBottle }) => {
     const { img } = cart;
     return (
         <div>
-            <img style={{ width: '100px', margin: '10px' }} src={img} alt="" />
+            <img
+                onClick={() => handleRemoveBottle(cart.id)}
+                style={{ width: '100px', margin: '10px' }} src={img} alt="" />
         </div>
     );
 };
